@@ -48,7 +48,6 @@ def evaluate_models(models: Dict[str, object], X_test: pd.DataFrame, y_test: pd.
         print(f"Recall:    {rec:.4f}")
         print(f"F1-score:  {f1:.4f}")
         print("\nClassification Report:")
-        # CHANGED: use actual class names instead of 0/1
         print(classification_report(y_test, predictions, target_names=class_names, zero_division=0))
 
         report_dict = classification_report(
@@ -76,7 +75,7 @@ def evaluate_models(models: Dict[str, object], X_test: pd.DataFrame, y_test: pd.
         disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
         disp.plot(xticks_rotation=45)  
         plt.title(f"Confusion Matrix - {name}")
-        plt.tight_layout()  # CHANGED: prevent label cutoff
+        plt.tight_layout() 
         plt.savefig(os.path.join(RESULTS_DIR, f"{name}_confusion_matrix.png"))
         plt.close()
 

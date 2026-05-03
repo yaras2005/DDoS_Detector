@@ -280,7 +280,7 @@ if not encoder_ok:
 
 
 with st.spinner("Running hybrid detection engine..."):
-    # ADDED: pass threshold from sidebar slider
+   
     result = analyze_uploaded_file(df, label_column=label_column or None, attack_threshold=attack_threshold)
 
 
