@@ -1,0 +1,4 @@
+{
+  "best_model": "random_forest",
+  "selection_metric": "weighted_f1"
+}
